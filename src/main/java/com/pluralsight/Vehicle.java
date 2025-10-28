@@ -1,7 +1,5 @@
 package com.pluralsight;
 
-import java.time.LocalDate;
-
 public class Vehicle extends Asset {
 
     String makeModel;
@@ -46,6 +44,7 @@ public class Vehicle extends Asset {
         int currentYear = 2025;
         int age = currentYear - year;
         double value;
+        double originalCost = 0;
 
         if (age <= 3) {
             value = originalCost * Math.pow(0.97, age);
@@ -58,7 +57,13 @@ public class Vehicle extends Asset {
         } else {
             value = 1000;
         }
+        if (odometer > 100000) {
+            boolean isHondaOrToyota = makeModel.contains("Honda") || makeModel.contains("Toyota");
 
+            if (!isHondaOrToyota) {
+                value = value * 0.75;
+            }
+        }
         return value;
     }
 }

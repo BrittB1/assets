@@ -48,7 +48,7 @@ public class House extends Asset {
     }
     @Override
     public double getValue() {
-        double pricePerSqFt = switch (condition) {
+        double pricePerSqFt = switch (this.condition) {
             case 1 -> 180.0;
             case 2 -> 130.0;
             case 3 ->  90.0;
