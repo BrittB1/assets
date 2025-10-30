@@ -1,9 +1,9 @@
 package com.pluralsight;
 
-public class Asset {
+public abstract class Asset {
 
-    private String description,dateAcquired;
-     private double originalCost;
+    protected String description,dateAcquired;
+     protected double originalCost;
 
     public Asset(String description, String dateAcquired, double originalCost) {
         this.description = description;
@@ -34,8 +34,5 @@ public class Asset {
     public void setOriginalCost(double originalCost) {
         this.originalCost = originalCost;
     }
-    public double getValue(){
-
-        return originalCost;
-    }
+    public abstract  double getValue();
 }

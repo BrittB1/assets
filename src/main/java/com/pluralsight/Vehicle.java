@@ -42,18 +42,18 @@ public class Vehicle extends Asset {
     public double getValue() {
 
         int currentYear = 2025;
-        int age = currentYear - year;
+        int age = currentYear - this.year;
         double value;
-        double originalCost = 0;
+        double originalCost = this.getOriginalCost();
 
         if (age <= 3) {
-            value = originalCost * Math.pow(0.97, age);
+            value = originalCost * Math.pow(.97, age);
 
         } else if (age <= 6) {
-            value = originalCost * Math.pow(0.94, age);
+            value = originalCost * Math.pow(.94, age);
 
         } else if (age <= 10) {
-            value = originalCost * Math.pow(0.92, age);
+            value = originalCost * Math.pow(.92, age);
         } else {
             value = 1000;
         }
